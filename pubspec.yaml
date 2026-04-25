@@ -1,0 +1,61 @@
+name: video_downloader
+description: StreamVault — high-fidelity multi-platform video downloader.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State management
+  flutter_riverpod: ^2.5.1
+
+  # Networking
+  dio: ^5.4.3
+  path: ^1.9.0
+  path_provider: ^2.1.3
+
+  # Media
+  video_player: ^2.8.6
+  video_player_win: ^3.2.2        # Windows video_player implementation
+  chewie: ^1.7.5
+
+  # Downloads (mobile only — conditionally initialised)
+  flutter_downloader: ^1.11.8
+
+  # FFmpeg (mobile + macOS; not used on Windows/Linux — system ffmpeg is used instead)
+  ffmpeg_kit_flutter_full_gpl: ^6.0.3
+
+  # Permissions
+  permission_handler: ^11.3.1
+
+  # Persistence
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
+  # UI helpers
+  cached_network_image: ^3.3.1
+  share_plus: ^7.2.2
+
+  # Gallery save (iOS/Android)
+  gal: ^2.3.2
+
+  # Icons
+  cupertino_icons: ^1.0.8
+  media_kit: ^1.2.6
+  media_kit_video: ^2.0.1
+  media_kit_libs_video: ^1.0.7
+  google_fonts: ^6.2.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.2
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/logo.png

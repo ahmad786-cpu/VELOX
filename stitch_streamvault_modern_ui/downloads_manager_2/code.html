@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b1326;
+            color: #dae2fd;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .progress-glow {
+            box-shadow: 0 0 12px rgba(192, 193, 255, 0.4);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#060e20",
+                        "surface-tint": "#c0c1ff",
+                        "inverse-surface": "#dae2fd",
+                        "inverse-on-surface": "#283044",
+                        "secondary-container": "#03b5d3",
+                        "on-secondary-container": "#00424e",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "secondary": "#4cd7f6",
+                        "outline": "#908fa0",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#07006c",
+                        "surface-variant": "#2d3449",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#340080",
+                        "on-secondary-fixed": "#001f26",
+                        "on-background": "#dae2fd",
+                        "tertiary-fixed-dim": "#d0bcff",
+                        "on-surface": "#dae2fd",
+                        "surface-bright": "#31394d",
+                        "surface": "#0b1326",
+                        "on-tertiary": "#3c0091",
+                        "on-surface-variant": "#c7c4d7",
+                        "tertiary": "#d0bcff",
+                        "on-secondary": "#003640",
+                        "on-primary": "#1000a9",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "primary-container": "#8083ff",
+                        "primary": "#c0c1ff",
+                        "outline-variant": "#464554",
+                        "surface-container-high": "#222a3d",
+                        "background": "#0b1326",
+                        "on-tertiary-fixed": "#23005c",
+                        "on-primary-container": "#0d0096",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "surface-container-low": "#131b2e",
+                        "inverse-primary": "#494bd6",
+                        "on-error": "#690005",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed": "#e1e0ff",
+                        "tertiary-fixed": "#e9ddff",
+                        "surface-container-highest": "#2d3449",
+                        "surface-dim": "#0b1326",
+                        "tertiary-container": "#a078ff",
+                        "secondary-fixed": "#acedff",
+                        "surface-container": "#171f33",
+                        "on-tertiary-fixed-variant": "#5516be"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "container-padding": "24px",
+                        "unit": "8px",
+                        "stack-lg": "32px",
+                        "stack-md": "16px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface">
+<!-- Top AppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-slate-950/50 backdrop-blur-md border-b border-white/10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-indigo-500">menu</span>
+<h1 class="text-xl font-black bg-gradient-to-r from-indigo-500 to-cyan-400 bg-clip-text text-transparent font-sans tracking-tight">StreamVault</h1>
+</div>
+<div class="w-8 h-8 rounded-full border border-white/20 bg-surface-container-high flex items-center justify-center overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="close-up portrait of a futuristic stylized human avatar in glowing neon digital art style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq1z9g-QQCLI4hE5s0Znqs5rhGwLnxt1KkBLbakMWljI-AaRwvtTLbhQymA4C3HeIZH6_-SAEizxWurJtM6N_UanIVMcgVd0ohb9p4qRTzcjbstIfVSQn302oZyKAEUD8nZSUfSVViIXKSxTsvodBEtvyRngW3-bx0lMbZIBu25aSCPLBpw2v5NdedupNwVTVjLCeQ35sEMGNxFd2sjmo6fEPjaHjOB5nOIS61IxH_la4gCvURfHsRoI1-xE4l56RY6lmDk1VNfCI"/>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-6xl mx-auto space-y-stack-lg">
+<!-- Active Downloads Section -->
+<section>
+<div class="flex items-center justify-between mb-stack-md">
+<h2 class="font-headline-md text-headline-md text-surface-tint">Active Downloads</h2>
+<span class="font-label-sm text-label-sm px-3 py-1 bg-primary-container/20 text-primary rounded-full">2 Running</span>
+</div>
+<div class="space-y-4">
+<!-- Download Item 1 -->
+<div class="glass-panel rounded-2xl p-container-padding flex flex-col md:flex-row items-center gap-6">
+<div class="relative w-full md:w-32 h-20 rounded-xl overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover opacity-50" data-alt="Cinematic wide shot of a futuristic cyberpunk city skyline at night with neon lights reflecting on wet streets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP6fkNUc4CnZoJuSWkyATOb9Ew0r5QQtwmufDuUKty1Yd_HpOj6YDxjdiL9S0AATnCXW9PG8L1lFk0ZjW0DdGMckH9L0mcBQ-Fz8pZdL9ncVHK_Sy3K6wVixFf6SB0rL29PuWYzzxfuAK5yB_OIcQfh2eu0MmxOzJl9Ux0SCMIhzwXfHytXJV_7Padlzo8u_RbLqgYuU5moIblRiH4L_tLwPCMXtuEOFQk2SvGibNVJq5IUEKtalHjn-qQSd8bX4edSuhS0cfAHf8"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">downloading</span>
+</div>
+</div>
+<div class="flex-1 w-full space-y-3">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-body-lg text-body-lg font-semibold text-white">Cyberpunk_2077_Official_Trailer_4K.mp4</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant flex gap-4 mt-1">
+<span>4.5 MB/s</span>
+<span>1.2 GB / 2.4 GB</span>
+<span>3m 12s remaining</span>
+</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-full bg-white/5 hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-on-surface">pause</span>
+</button>
+<button class="p-2 rounded-full bg-white/5 hover:bg-white/10 transition-colors text-error">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden relative">
+<div class="absolute top-0 left-0 h-full w-[45%] bg-gradient-to-r from-indigo-500 to-cyan-400 progress-glow"></div>
+</div>
+</div>
+</div>
+<!-- Download Item 2 -->
+<div class="glass-panel rounded-2xl p-container-padding flex flex-col md:flex-row items-center gap-6">
+<div class="relative w-full md:w-32 h-20 rounded-xl overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover opacity-50" data-alt="abstract flowing liquid metal textures with deep purple and indigo lighting highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAztvUKAWRn1HcyTaoV9ADCvrnXW3Ku6jQ4Fzfd7oFUCNeCx9S4iU7Elfpn9IY-voJ1607Ms3l16d7Gqlo9lYyBrA-mP2vS3Ids8iWzJNPg3eHQ6nyHo3cXxAA3Tri7jdlJscX6meQMRYT28h5UcUon4vrqTbnonUtEROm-9sIE7kSq-PAtUSNdmgT9Ioon-5T2xLGKb6ndz136WXf4EnJ6KwyjuZh_H6SMFKvo9S1z7k0jE2VxuHFJj0DQ4ODA_Ncwa6k2iC-frcQ"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">downloading</span>
+</div>
+</div>
+<div class="flex-1 w-full space-y-3">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-body-lg text-body-lg font-semibold text-white">Nature_Documentary_Deep_Sea_1080p.mkv</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant flex gap-4 mt-1">
+<span>1.2 MB/s</span>
+<span>842 MB / 1.1 GB</span>
+<span>12m 45s remaining</span>
+</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-full bg-white/5 hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-on-surface">pause</span>
+</button>
+<button class="p-2 rounded-full bg-white/5 hover:bg-white/10 transition-colors text-error">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden relative">
+<div class="absolute top-0 left-0 h-full w-[72%] bg-gradient-to-r from-indigo-500 to-cyan-400 progress-glow"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Completed Section -->
+<section>
+<div class="flex items-center justify-between mb-stack-md">
+<h2 class="font-headline-md text-headline-md text-surface-tint">Completed</h2>
+<button class="font-label-md text-label-md text-primary flex items-center gap-1">
+                    View All <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Video Card 1 -->
+<div class="glass-panel rounded-3xl overflow-hidden group">
+<div class="relative aspect-video">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="close-up of vibrant tropical plants in a lush rainforest with soft dappled sunlight and deep shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVYJz_kyN67vFm8HHSlj3IyAtnqYDIMT9Zk7R_l4F8xsuvO0CA330g42neytLD5Uv-oTpbo3Z_eHmn33AN1neFcBK1WZDcHdkKQZX6m-DqyUKCBUgQ1fixsy_mTybqMwOmZr6hQW9IP8SLR1aisF5mSFOSVdzUJJe3QjoPYeO-wZr5OefdPsBNtnY4ujhcKF5LOJ5CNB3Jk8JxJKV6Zm-2cDVsSNIzyeHDV_hUdVUHeYtG67JLkyPH6kCDlnTuXdN6A4xTCJzyRms"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="w-12 h-12 rounded-full bg-primary/90 flex items-center justify-center text-on-primary shadow-[0_0_20px_rgba(192,193,255,0.5)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<span class="absolute bottom-2 right-2 px-1.5 py-0.5 bg-black/70 rounded text-[10px] font-bold text-white">12:45</span>
+</div>
+<div class="p-4 flex justify-between items-start">
+<div class="overflow-hidden">
+<h4 class="font-label-md text-label-md text-white truncate">The Silent Forest Ep1</h4>
+<p class="text-[10px] text-on-surface-variant uppercase mt-1">452 MB • Yesterday</p>
+</div>
+<button class="text-on-surface-variant hover:text-white">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Video Card 2 -->
+<div class="glass-panel rounded-3xl overflow-hidden group">
+<div class="relative aspect-video">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Abstract 3D render of crystalline structures glowing with internal light in a dark void" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVnYTVI1DyOanKF3OQyN96Kv3AiDrvKw3c4GJ-v6_JExY86pwF2iShjRZVu3z4wS3XFeswCMSnalVWm88Cz_NKtupM33_PC76IYbDkUvfYXUNg2mLMy3sevcsWx-SyIu5em4SFpRcWKEA9pqgpnsnCpJZ_PNaztahMKgigpG_Ph38pkxzLWda8as_zz8npWCGw1ZLeJsN_a4r0H8t-_CCvZHsNMEoXw5g8P16h3VdyWbeLWpgG8qRSwW3PPuVFcDViKOxRH4y7tno"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="w-12 h-12 rounded-full bg-primary/90 flex items-center justify-center text-on-primary shadow-[0_0_20px_rgba(192,193,255,0.5)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<span class="absolute bottom-2 right-2 px-1.5 py-0.5 bg-black/70 rounded text-[10px] font-bold text-white">04:20</span>
+</div>
+<div class="p-4 flex justify-between items-start">
+<div class="overflow-hidden">
+<h4 class="font-label-md text-label-md text-white truncate">Neon Waves Visualizer</h4>
+<p class="text-[10px] text-on-surface-variant uppercase mt-1">128 MB • 2 days ago</p>
+</div>
+<button class="text-on-surface-variant hover:text-white">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Video Card 3 -->
+<div class="glass-panel rounded-3xl overflow-hidden group">
+<div class="relative aspect-video">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="stunning wide angle shot of the aurora borealis dancing over a snow-capped mountain range in the arctic night" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzc07A_ZsjEUvdHMr8F2AXFzVEY8q7ey5o0xll-TEdGS_ATLM2bO0L5G9sM03dyqFqBwSuqnaEQV4VVJiJPrS1N8LdU502kQB1y0tFIJUNZbTcrEc_2MS5ORerCCa5CjicuWRzKhK3fN8aML7XLiuPCOHbnXHrGp-4psxdsL1yYk34lqlcWmHRFYXeCjU_EhEDMrIfP5ntVZN_7_-5aFmcENZz9NMy515x2V5uM7BFow-DQ_fuOn9TN-VeKNESOBaa8GlLmIrC-b8"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="w-12 h-12 rounded-full bg-primary/90 flex items-center justify-center text-on-primary shadow-[0_0_20px_rgba(192,193,255,0.5)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<span class="absolute bottom-2 right-2 px-1.5 py-0.5 bg-black/70 rounded text-[10px] font-bold text-white">08:12</span>
+</div>
+<div class="p-4 flex justify-between items-start">
+<div class="overflow-hidden">
+<h4 class="font-label-md text-label-md text-white truncate">Nordic Nights 4K</h4>
+<p class="text-[10px] text-on-surface-variant uppercase mt-1">890 MB • Last Week</p>
+</div>
+<button class="text-on-surface-variant hover:text-white">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Video Card 4 -->
+<div class="glass-panel rounded-3xl overflow-hidden group">
+<div class="relative aspect-video">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Professional kitchen scene with chef preparing a vibrant gourmet dish with fresh herbs and colorful sauces" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwR-PgCm3vMAUUwy6YbstcHTvQTAbVsaLaccgZEhi6uYqJk58tikk71cd7TIH-qJqRUkNxAl5caUdRzw-aPL9WazRM43Amn0Qsz7GQERZaD7OOu-KID0P5l-og4nUMr3PRUEbotPZKFxnJedTrKrlB4mibOQ1AtWPkIUxBeVFy5itQOSSLYrM_vZslqwWWfACjs0dgO98OjX6M3fQOhn8MO-XaEfuCQn7W-EupBAE2UYhky5zNeXNoBvv3AlJ4vjW_AEq9W8cogmY"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="w-12 h-12 rounded-full bg-primary/90 flex items-center justify-center text-on-primary shadow-[0_0_20px_rgba(192,193,255,0.5)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<span class="absolute bottom-2 right-2 px-1.5 py-0.5 bg-black/70 rounded text-[10px] font-bold text-white">15:00</span>
+</div>
+<div class="p-4 flex justify-between items-start">
+<div class="overflow-hidden">
+<h4 class="font-label-md text-label-md text-white truncate">Masterclass: Culinary Art</h4>
+<p class="text-[10px] text-on-surface-variant uppercase mt-1">2.1 GB • Oct 24</p>
+</div>
+<button class="text-on-surface-variant hover:text-white">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Empty State (Demonstrative) -->
+<section class="py-12 flex flex-col items-center justify-center text-center opacity-40">
+<div class="w-48 h-48 bg-gradient-to-br from-indigo-500/20 to-cyan-400/20 rounded-full flex items-center justify-center mb-6 border border-white/5">
+<span class="material-symbols-outlined text-8xl text-indigo-400" style="font-variation-settings: 'wght' 200;">smart_toy</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-surface-tint">No more tasks!</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mt-2">Your cute download robot is taking a nap. Paste a link to wake him up!</p>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 bg-slate-900/80 backdrop-blur-xl rounded-t-[32px] border-t border-white/10 shadow-[0_-10px_40px_rgba(0,0,0,0.5)] pb-safe">
+<div class="flex flex-col items-center justify-center text-slate-500 hover:text-indigo-300">
+<span class="material-symbols-outlined">home</span>
+<span class="font-sans text-[10px] font-semibold">home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.6)] scale-110">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">download_for_offline</span>
+<span class="font-sans text-[10px] font-semibold">downloads</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 hover:text-indigo-300">
+<span class="material-symbols-outlined">video_library</span>
+<span class="font-sans text-[10px] font-semibold">library</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 hover:text-indigo-300">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-sans text-[10px] font-semibold">settings</span>
+</div>
+</nav>
+<!-- Floating Action Button -->
+<button class="fixed right-6 bottom-28 w-14 h-14 rounded-full bg-gradient-to-br from-indigo-500 to-cyan-400 flex items-center justify-center text-white shadow-[0_8px_30px_rgba(73,75,214,0.4)] hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</body></html>

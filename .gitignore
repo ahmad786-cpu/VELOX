@@ -1,0 +1,39 @@
+# .gitignore for Velox
+
+# Flutter/Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+
+# Android
+.gradle/
+local.properties
+*.apk
+*.aab
+
+# iOS/macOS
+Pods/
+DerivedData/
+*.swp
+*.lock
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Local Python Backend
+backend/__pycache__/
+backend/venv/
+*.pyc
+
+# Local Assets/Downloads
+StreamVault/
+Velox/
+downloads/
+assets/logo.png # Optional: if you want to keep the logo private, but usually logos are included.

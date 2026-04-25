@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b1326; /* theme surface-dim */
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary": "#003640",
+                      "surface-tint": "#c0c1ff",
+                      "outline-variant": "#464554",
+                      "on-surface": "#dae2fd",
+                      "tertiary-container": "#a078ff",
+                      "primary-fixed": "#e1e0ff",
+                      "on-tertiary-fixed": "#23005c",
+                      "on-surface-variant": "#c7c4d7",
+                      "tertiary-fixed-dim": "#d0bcff",
+                      "secondary-container": "#03b5d3",
+                      "on-error-container": "#ffdad6",
+                      "surface": "#0b1326",
+                      "secondary-fixed": "#acedff",
+                      "on-secondary-container": "#00424e",
+                      "surface-bright": "#31394d",
+                      "on-primary-container": "#0d0096",
+                      "surface-container-high": "#222a3d",
+                      "primary-fixed-dim": "#c0c1ff",
+                      "secondary-fixed-dim": "#4cd7f6",
+                      "on-primary-fixed-variant": "#2f2ebe",
+                      "surface-variant": "#2d3449",
+                      "inverse-surface": "#dae2fd",
+                      "on-tertiary-container": "#340080",
+                      "primary": "#c0c1ff",
+                      "on-secondary-fixed-variant": "#004e5c",
+                      "on-error": "#690005",
+                      "on-background": "#dae2fd",
+                      "surface-container-highest": "#2d3449",
+                      "on-tertiary": "#3c0091",
+                      "on-tertiary-fixed-variant": "#5516be",
+                      "tertiary": "#d0bcff",
+                      "inverse-on-surface": "#283044",
+                      "surface-dim": "#0b1326",
+                      "secondary": "#4cd7f6",
+                      "primary-container": "#8083ff",
+                      "tertiary-fixed": "#e9ddff",
+                      "outline": "#908fa0",
+                      "error": "#ffb4ab",
+                      "background": "#0b1326",
+                      "on-primary-fixed": "#07006c",
+                      "on-secondary-fixed": "#001f26",
+                      "surface-container-lowest": "#060e20",
+                      "on-primary": "#1000a9",
+                      "error-container": "#93000a",
+                      "surface-container": "#171f33",
+                      "surface-container-low": "#131b2e",
+                      "inverse-primary": "#494bd6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-lg": "32px",
+                      "container-padding": "24px",
+                      "stack-sm": "8px",
+                      "unit": "8px",
+                      "stack-md": "16px",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "label-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "display-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-dim text-on-surface selection:bg-indigo-500/30">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 bg-slate-950/70 backdrop-blur-xl border-b border-white/10 shadow-[0_0_15px_rgba(99,102,241,0.1)] flex justify-between items-center px-6 h-16">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-400 cursor-pointer active:scale-95 duration-200">menu</span>
+<h1 class="font-inter tracking-tight text-2xl font-black bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-cyan-400">Settings</h1>
+</div>
+<div class="h-10 w-10 rounded-full border-2 border-indigo-500/50 overflow-hidden ring-2 ring-indigo-500/20 active:scale-95 duration-200 cursor-pointer">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Modern close-up portrait of a professional man with clean lighting and neutral studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk8X_U8RwDxPDLhUKLTbos_V3JwugK-iG61_6uHuDlPQFgKfy7Ck463BFb8h8gkA5K5LkPuBXn9aMFad8mvHk3M4p93QTZLzELhw_iSDbdt6TrRDJn6PpXFD4dbjf6HpCBGFVe8C7b8g1LRpQlJwfE_fI1igoyUqqJDOIcs9kf0vDDnMuHemtqNZUJj5FE59j985BBrqSB1T2K7WtjMgPpXVdEkOEGQ9vzAi9y0CxXleMlNE5vOHgHmGsdnXf9WNyjJUDWfW7uKNA"/>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-2xl mx-auto space-y-stack-lg">
+<!-- Profile Header -->
+<section class="bg-slate-900/40 backdrop-blur-xl border border-white/10 rounded-3xl p-6 flex items-center gap-6 shadow-2xl">
+<div class="relative">
+<div class="w-20 h-20 rounded-2xl overflow-hidden border border-indigo-500/30">
+<img alt="User" class="w-full h-full object-cover" data-alt="Close-up of a smiling professional person with soft rim lighting and minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEjqr0ctyH4L5-ybL_AOOQyAZYSH0TqFDXtbKABOXHOibO07iEYfM7WwNXsZScZO8oAssP6BmNF0l_KAaAY5OiprHtYoqiB6Zpgfk7njhoy0ia8cFN-ICVorw2umK_NI-T_RA1TzzW66VU_dE6etiACYsjvor94Uguk0CPlmPvXQiS5w3bdLwvgsE5byTNrTdJB844k3fG9h3p3kCPLyxkh59cSsbdTuNM0ZEynlnHOpqxAFBwnE701EUfnvthPfaHiTQaM0gNwLs"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-gradient-to-br from-indigo-500 to-cyan-400 p-1.5 rounded-lg shadow-lg">
+<span class="material-symbols-outlined text-[16px] text-white" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+</div>
+<div>
+<h2 class="text-headline-md font-headline-md text-on-surface">Alex Thompson</h2>
+<p class="text-label-md font-label-md text-slate-400">Premium Plan • Pro User</p>
+<button class="mt-2 px-4 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-label-sm font-label-sm transition-all text-cyan-400">
+                    Manage Account
+                </button>
+</div>
+</section>
+<!-- Settings Groups -->
+<div class="space-y-6">
+<!-- Account Section -->
+<div class="space-y-3">
+<h3 class="text-label-sm font-label-sm text-indigo-400 uppercase tracking-widest px-2">Account</h3>
+<div class="bg-slate-900/40 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden divide-y divide-white/5">
+<div class="flex items-center justify-between p-4 hover:bg-white/5 cursor-pointer transition-colors group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-indigo-400">person</span>
+<span class="text-body-md font-body-md">Personal Info</span>
+</div>
+<span class="material-symbols-outlined text-slate-600 text-[20px]">chevron_right</span>
+</div>
+<div class="flex items-center justify-between p-4 hover:bg-white/5 cursor-pointer transition-colors group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-indigo-400">stars</span>
+<span class="text-body-md font-body-md">Subscription</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="bg-indigo-500/20 text-indigo-400 text-[10px] px-2 py-0.5 rounded-full uppercase font-bold tracking-tighter">Premium</span>
+<span class="material-symbols-outlined text-slate-600 text-[20px]">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Downloads Section -->
+<div class="space-y-3">
+<h3 class="text-label-sm font-label-sm text-indigo-400 uppercase tracking-widest px-2">Downloads</h3>
+<div class="bg-slate-900/40 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden divide-y divide-white/5">
+<div class="flex items-center justify-between p-4 hover:bg-white/5 cursor-pointer transition-colors group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-indigo-400">high_quality</span>
+<span class="text-body-md font-body-md">Default Quality</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-slate-500 text-label-md">4K Ultra HD</span>
+<span class="material-symbols-outlined text-slate-600 text-[20px]">expand_more</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 hover:bg-white/5 cursor-pointer transition-colors group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-indigo-400">folder_open</span>
+<span class="text-body-md font-body-md">Download Path</span>
+</div>
+<span class="text-slate-500 text-label-md max-w-[150px] truncate">/Internal/Videos/Vault/</span>
+</div>
+<div class="flex items-center justify-between p-4 hover:bg-white/5 transition-colors group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-indigo-400">play_circle</span>
+<span class="text-body-md font-body-md">Auto-resume downloads</span>
+</div>
+<div class="w-12 h-6 bg-indigo-500 rounded-full relative cursor-pointer">
+<div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Appearance Section -->
+<div class="space-y-3">
+<h3 class="text-label-sm font-label-sm text-indigo-400 uppercase tracking-widest px-2">Appearance</h3>
+<div class="bg-slate-900/40 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden divide-y divide-white/5">
+<div class="flex items-center justify-between p-4 hover:bg-white/5 transition-colors group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-indigo-400">dark_mode</span>
+<span class="text-body-md font-body-md">Dark Mode</span>
+</div>
+<div class="w-12 h-6 bg-indigo-500 rounded-full relative cursor-pointer shadow-[0_0_10px_rgba(99,102,241,0.5)]">
+<div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 hover:bg-white/5 transition-colors group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-indigo-400">palette</span>
+<span class="text-body-md font-body-md">Theme Color</span>
+</div>
+<div class="flex gap-2">
+<div class="w-6 h-6 rounded-full bg-indigo-500 border-2 border-white ring-2 ring-indigo-500/20"></div>
+<div class="w-6 h-6 rounded-full bg-emerald-500 opacity-50"></div>
+<div class="w-6 h-6 rounded-full bg-rose-500 opacity-50"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- About Section -->
+<div class="space-y-3">
+<h3 class="text-label-sm font-label-sm text-indigo-400 uppercase tracking-widest px-2">About</h3>
+<div class="bg-slate-900/40 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden divide-y divide-white/5">
+<div class="flex items-center justify-between p-4 hover:bg-white/5 cursor-pointer transition-colors group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-indigo-400">info</span>
+<span class="text-body-md font-body-md">Version</span>
+</div>
+<span class="text-slate-500 text-label-md">v2.4.0 (Stable)</span>
+</div>
+<div class="flex items-center justify-between p-4 hover:bg-white/5 cursor-pointer transition-colors group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-indigo-400">policy</span>
+<span class="text-body-md font-body-md">Privacy Policy</span>
+</div>
+<span class="material-symbols-outlined text-slate-600 text-[20px]">open_in_new</span>
+</div>
+<div class="flex items-center justify-between p-4 hover:bg-white/5 cursor-pointer transition-colors group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-indigo-400">gavel</span>
+<span class="text-body-md font-body-md">Terms of Service</span>
+</div>
+<span class="material-symbols-outlined text-slate-600 text-[20px]">open_in_new</span>
+</div>
+</div>
+</div>
+<!-- Sign Out Button -->
+<button class="w-full py-4 px-6 border border-rose-500/30 text-rose-400 rounded-3xl hover:bg-rose-500/10 transition-colors font-medium flex items-center justify-center gap-2 group">
+<span class="material-symbols-outlined group-hover:scale-110 duration-200">logout</span>
+                Sign Out
+            </button>
+</div>
+</main>
+<!-- Bottom Nav Bar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-3xl bg-slate-950/80 backdrop-blur-2xl border-t border-white/10 shadow-[0_-4px_20px_rgba(0,0,0,0.5)] flex justify-around items-center h-20 pb-4">
+<div class="flex flex-col items-center justify-center text-slate-500 hover:text-indigo-400 transition-all active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-[10px] font-medium uppercase tracking-widest mt-1">Browse</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 hover:text-indigo-400 transition-all active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined">video_library</span>
+<span class="text-[10px] font-medium uppercase tracking-widest mt-1">Library</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 hover:text-indigo-400 transition-all active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined">download_for_offline</span>
+<span class="text-[10px] font-medium uppercase tracking-widest mt-1">Downloads</span>
+</div>
+<div class="flex flex-col items-center justify-center text-cyan-400 relative after:content-[''] after:absolute after:-bottom-1 after:w-1 after:h-1 after:bg-cyan-400 after:rounded-full active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium uppercase tracking-widest mt-1">Settings</span>
+</div>
+</nav>
+<!-- Background Decoration -->
+<div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+<div class="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-indigo-600/10 blur-[120px] rounded-full"></div>
+<div class="absolute top-[40%] -right-[10%] w-[40%] h-[40%] bg-cyan-600/10 blur-[120px] rounded-full"></div>
+</div>
+</body></html>

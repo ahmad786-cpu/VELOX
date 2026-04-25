@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>StreamVault - Cinematic Video Downloader</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#060e20",
+                    "surface-tint": "#c0c1ff",
+                    "inverse-surface": "#dae2fd",
+                    "inverse-on-surface": "#283044",
+                    "secondary-container": "#03b5d3",
+                    "on-secondary-container": "#00424e",
+                    "on-primary-fixed-variant": "#2f2ebe",
+                    "secondary": "#4cd7f6",
+                    "outline": "#908fa0",
+                    "error": "#ffb4ab",
+                    "on-primary-fixed": "#07006c",
+                    "surface-variant": "#2d3449",
+                    "error-container": "#93000a",
+                    "on-tertiary-container": "#340080",
+                    "on-secondary-fixed": "#001f26",
+                    "on-background": "#dae2fd",
+                    "tertiary-fixed-dim": "#d0bcff",
+                    "on-surface": "#dae2fd",
+                    "surface-bright": "#31394d",
+                    "surface": "#0b1326",
+                    "on-tertiary": "#3c0091",
+                    "on-surface-variant": "#c7c4d7",
+                    "tertiary": "#d0bcff",
+                    "on-secondary": "#003640",
+                    "on-primary": "#1000a9",
+                    "on-secondary-fixed-variant": "#004e5c",
+                    "secondary-fixed-dim": "#4cd7f6",
+                    "primary-container": "#8083ff",
+                    "primary": "#c0c1ff",
+                    "outline-variant": "#464554",
+                    "surface-container-high": "#222a3d",
+                    "background": "#0b1326",
+                    "on-tertiary-fixed": "#23005c",
+                    "on-primary-container": "#0d0096",
+                    "primary-fixed-dim": "#c0c1ff",
+                    "surface-container-low": "#131b2e",
+                    "inverse-primary": "#494bd6",
+                    "on-error": "#690005",
+                    "on-error-container": "#ffdad6",
+                    "primary-fixed": "#e1e0ff",
+                    "tertiary-fixed": "#e9ddff",
+                    "surface-container-highest": "#2d3449",
+                    "surface-dim": "#0b1326",
+                    "tertiary-container": "#a078ff",
+                    "secondary-fixed": "#acedff",
+                    "surface-container": "#171f33",
+                    "on-tertiary-fixed-variant": "#5516be"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "8px",
+                    "container-padding": "24px",
+                    "unit": "8px",
+                    "stack-lg": "32px",
+                    "stack-md": "16px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .liquid-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #22d3ee 100%);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+        }
+        .glow-text {
+            text-shadow: 0 0 12px rgba(192, 193, 255, 0.5);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#0F172A] text-on-background font-body-md min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-slate-950/50 backdrop-blur-md border-b border-white/10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-indigo-500">menu</span>
+<h1 class="text-xl font-black bg-gradient-to-r from-indigo-500 to-cyan-400 bg-clip-text text-transparent font-sans tracking-tight">StreamVault</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-indigo-400 hover:text-cyan-400 transition-colors">
+<span class="material-symbols-outlined">content_paste</span>
+</button>
+<div class="w-10 h-10 rounded-full border-2 border-indigo-500/30 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="portrait of a professional user with clean lighting and neutral studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbBb_cRlCvtXM7GgXmM0WzQY-narUDLywDAmr2vsznj15TZQz4Da6igOvAsUIrLBqdTm65lZR8GzvLRVz4YYaVMubr-EkKJn_VTGrUGSnwXU2Vg0_a5kuCGol5RaQUF8p3ossPef6ov3ZI-NTqO1PBU49mGGBt_eb1PQJPfwfjwC1d9dKKoWGelqoD6fItn9DuiyDsvx6O7RQmsv8ZfWwjjsvbsuZu68ocvf9gyEj00AHPvfHcqIdmRd2mbF_ta66eS4cLNLsXCtE"/>
+</div>
+</div>
+</header>
+<main class="pt-24 px-container-padding max-w-4xl mx-auto space-y-stack-lg">
+<!-- Hero Search Section -->
+<section class="text-center space-y-stack-md">
+<h2 class="font-display-lg text-display-lg text-white glow-text mb-2">Capture Anything.</h2>
+<p class="text-on-surface-variant font-body-md max-w-md mx-auto">High-fidelity downloads for your favorite cinematic content, instantly.</p>
+<div class="relative group mt-stack-lg">
+<div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-cyan-400 rounded-full blur opacity-25 group-focus-within:opacity-50 transition duration-1000"></div>
+<div class="relative flex items-center bg-surface-container-lowest/80 backdrop-blur-2xl rounded-full border border-white/10 p-2 shadow-2xl">
+<span class="material-symbols-outlined ml-4 text-slate-400">link</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-white font-body-lg px-4 placeholder:text-white/20" placeholder="Paste URL here" type="text"/>
+<button class="liquid-gradient text-white font-label-md px-8 py-3 rounded-full hover:scale-105 active:scale-95 transition-all">
+                        Fetch
+                    </button>
+</div>
+</div>
+</section>
+<!-- Video Preview Card (Active State) -->
+<section class="animate-in fade-in slide-in-from-bottom-4 duration-700">
+<div class="glass-panel rounded-[24px] overflow-hidden shadow-2xl">
+<div class="relative aspect-video group">
+<img class="w-full h-full object-cover" data-alt="cinematic wide shot of a futuristic cyberpunk city with neon lights and rainy streets at night" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7D_ero53Y3Vrp3V8QmoyIKKOhcchMEp4xwtnijbkHQ8R8k2Z-hn7dd271O4V6jMxP5MMI7XjywdVSNIo_bcGCoXMfYif_OfwO87ouzTKjT6ofTJCWkf4T9xOc8jeLhA2sSqe7CLPnh5otCZFcqN6q02UBWLQvxAi3sKu0sHnmH3_8FZ7mPHWR93ebLgH6rhLtDkZX1N5KLBbsq7I6J8egkX1nezkIed83N62CM1i8o-g0Pr7cZQgKXD9CN5VQQfL-Ne7MerRK5Fc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+<!-- Title Overlay -->
+<div class="absolute bottom-0 left-0 p-6 w-full flex justify-between items-end">
+<div class="space-y-1">
+<span class="bg-indigo-500/20 text-indigo-300 text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded backdrop-blur-md border border-indigo-500/30">Detected</span>
+<h3 class="font-headline-md text-headline-md text-white drop-shadow-md">The Last Frontier: Neon Dreams</h3>
+<p class="text-white/60 font-label-sm">YouTube • 14:20</p>
+</div>
+<div class="glass-panel p-2 rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-weight="fill">play_circle</span>
+</div>
+</div>
+</div>
+<div class="p-6 space-y-stack-md">
+<!-- Quality Selector -->
+<div>
+<label class="font-label-sm text-slate-400 mb-3 block uppercase tracking-wider">Select Quality</label>
+<div class="flex flex-wrap gap-3">
+<button class="bg-indigo-500 text-white font-label-md px-5 py-2 rounded-full border border-indigo-400 shadow-[0_0_15px_rgba(99,102,241,0.4)]">4K Ultra</button>
+<button class="glass-panel text-on-surface-variant font-label-md px-5 py-2 rounded-full hover:border-cyan-400 transition-colors">1080p HD</button>
+<button class="glass-panel text-on-surface-variant font-label-md px-5 py-2 rounded-full hover:border-cyan-400 transition-colors">720p</button>
+<button class="glass-panel text-on-surface-variant font-label-md px-5 py-2 rounded-full hover:border-cyan-400 transition-colors">MP3 Audio</button>
+</div>
+</div>
+<!-- Progress & Download -->
+<div class="space-y-4">
+<div class="h-2 bg-slate-800 rounded-full overflow-hidden relative">
+<div class="absolute top-0 left-0 h-full w-[65%] liquid-gradient rounded-full">
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-cyan-300 rounded-full blur-md"></div>
+</div>
+</div>
+<div class="flex justify-between text-[11px] font-semibold text-indigo-300 uppercase tracking-widest">
+<span>Downloading... 65%</span>
+<span>1.2 GB / 1.8 GB</span>
+</div>
+<button class="w-full py-4 rounded-xl liquid-gradient text-white font-headline-md flex items-center justify-center gap-3 group relative overflow-hidden">
+<span class="relative z-10">Start Download</span>
+<span class="material-symbols-outlined relative z-10 group-hover:translate-y-1 transition-transform">download_for_offline</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Secondary Information / Bento Style -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="glass-panel p-6 rounded-[24px] space-y-3">
+<span class="material-symbols-outlined text-cyan-400 text-3xl">bolt</span>
+<h4 class="font-headline-md text-white">Turbo Speed</h4>
+<p class="text-on-surface-variant font-body-md">Utilizing multi-threaded acceleration to saturate your bandwidth.</p>
+</div>
+<div class="glass-panel p-6 rounded-[24px] space-y-3">
+<span class="material-symbols-outlined text-indigo-400 text-3xl">shield</span>
+<h4 class="font-headline-md text-white">Secure Vault</h4>
+<p class="text-on-surface-variant font-body-md">All downloads are scanned and processed in an isolated sandbox.</p>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 bg-slate-900/80 backdrop-blur-xl rounded-t-[32px] border-t border-white/10 pb-safe shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.6)] scale-110" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] font-semibold font-sans mt-1">home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-indigo-300 transition-colors" href="#">
+<span class="material-symbols-outlined">download_for_offline</span>
+<span class="text-[10px] font-semibold font-sans mt-1">downloads</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-indigo-300 transition-colors" href="#">
+<span class="material-symbols-outlined">play_circle</span>
+<span class="text-[10px] font-semibold font-sans mt-1">library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-indigo-300 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-semibold font-sans mt-1">settings</span>
+</a>
+</nav>
+<!-- Contextual FAB (Hidden as per hierarchy rules on home but shown here for UI richness if deemed necessary - suppressed as requested in system instructions) -->
+</body></html>
