@@ -32,7 +32,7 @@ class AppConstants {
   static const String appName          = 'Velox';
   static const String appSubtitle     = 'Premium Video Downloader';
   static const String downloadDirName  = 'Velox';
-  static const String apiBaseUrl       = 'http://127.0.0.1:8000';
+  static const String apiBaseUrl       = 'https://ahmad5581-volex.hf.space';
 
   // ── Colours ───────────────────────────────────────────────────────────────
   static const Color background              = Color(0xFF0B1326);
